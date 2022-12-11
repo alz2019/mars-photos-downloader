@@ -9,3 +9,15 @@ spring:
     password: postgres
   jpa:
     open-in-view: false
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:tc:postgresql:11.1:///integration-tests-db
+  jpa:
+    hibernate:
+      ddl-auto: update
+  flyway:
+    enabled: false

@@ -28,8 +28,9 @@ public class Camera {
     @Column(nullable = false)
     String name;
 
-    @Column(nullable = false, insertable = false, updatable = false)
-    LocalDateTime createdAt;
+    @Column(nullable = false)
+    @Builder.Default
+    LocalDateTime createdAt = LocalDateTime.now();
 
     @OneToMany(mappedBy = "camera", cascade = CascadeType.PERSIST)
     @Setter(AccessLevel.PRIVATE)

@@ -26,8 +26,9 @@ public class Photo {
     @Column(nullable = false, unique = true)
     String imgSrc;
 
-    @Column(nullable = false, insertable = false, updatable = false)
-    LocalDateTime createdAt;
+    @Column(nullable = false)
+    @Builder.Default
+    LocalDateTime createdAt = LocalDateTime.now();
 
     @ManyToOne
     @JoinColumn(name = "camera_id")
