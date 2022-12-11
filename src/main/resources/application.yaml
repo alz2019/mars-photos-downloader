@@ -1,0 +1,11 @@
+nasa:
+  api:
+    url: https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos
+    key: DEMO_KEY
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=mars
+    username: mars
+    password: postgres
+  jpa:
+    open-in-view: false
