@@ -1,6 +1,5 @@
 package com.alz2019.controller;
 
-import com.alz2019.dto.RequestDto;
 import com.alz2019.service.PhotoService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -26,7 +25,7 @@ public class PhotoController {
     }
 
     @PostMapping
-    public void downloadPhotos(@RequestBody RequestDto requestDto) {
-        photoService.downloadPhotosBySol(requestDto.sol());
+    public void downloadPhotos(@RequestParam int sol) {
+        photoService.downloadPhotosBySol(sol);
     }
 }

@@ -1,6 +1,5 @@
 package com.alz2019.integration;
 
-import com.alz2019.dto.RequestDto;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -23,9 +22,8 @@ public class MarsIT {
     void downloadPhotosTest() {
         given()
                 .port(port)
-                .with().body(new RequestDto(15)).contentType("application/json")
                 .when()
-                .post("/api/v1/pictures")
+                .post("/api/v1/pictures?sol=15")
                 .then()
                 .statusCode(200);
     }
